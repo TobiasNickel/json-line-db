@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "mocha src/test/"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mocha": "^6.1.4",
+    "tasyncexpress": "^1.0.2"
+  }
+}
