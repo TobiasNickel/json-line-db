@@ -11,8 +11,8 @@ app.get('/', (req, res) => { res.json({da:'ta'}) })
 app.post('/api/:collection', async (req, res) => {
     try {
         if (typeof req.body !== "object") return res.status(300).json('missing data');
-        await storage.store(req.params.collection, req.body);
-        res.json(true);
+        const data = await storage.store(req.params.collection, req.body);
+        res.json(data);
     } catch (err) {
         res.json({ m: err.message });
     }
@@ -20,7 +20,7 @@ app.post('/api/:collection', async (req, res) => {
 
 app.get('/api/:collection/:index', async (req, res) => {
     try {
-        res.json(await storage.getById(collectionFile(req.params.collection), req.params.index));
+        res.json(await storage.getOneById(req.params.collection, parseInt(req.params.index)));
     } catch (err) {
         res.json({ m: err.message });
     }
