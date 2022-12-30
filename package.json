@@ -5,7 +5,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "mocha": "^6.1.4",
+    "mocha": "^10.2.0",
     "tasyncexpress": "^1.0.2"
   }
 }
